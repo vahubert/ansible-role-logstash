@@ -4,7 +4,7 @@ output {
 {% if logstash_elasticsearch_username is defined %}
     user => "{{ logstash_elasticsearch_username }}"
     password => "{{ logstash_elasticsearch_password }}"
-{% else %}
+{% endif %}
     index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
   }
 }
